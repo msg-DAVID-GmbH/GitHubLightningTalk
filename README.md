@@ -12,6 +12,7 @@ This repository demonstrates working with GitHub and the services in the marketp
 * [Adding a test](#add_test)
 * [Travis CI](#travis)
 * [Codecov](#codecov)
+* [Codecov on pull requests](#codecov_pr)
 * [License badge](#license)
 
 ## <a name="creating_account"></a>Creating an account
@@ -218,6 +219,30 @@ Your next travis build should start automatically after pushing your changes, an
 Now you can go to https://codecov.io/, log in if necessary, go to Settings -> Badge -> Markdown, copy the markdown and add it to your README.MD. Now you should see a coverage percentage in GitHub like so:
 
 ![Codecov badge embedded in README.MD](/images/codecov_badge.png)
+
+## <a name="codecov_pr"></a>Codecov on pull requests
+
+Travis will build on creating a pull request, and that build will count as a check in the pull request. This also triggers Codecov, adding Codecov checks to the pull request. There is  even a Codecov bot commenting on pull requests. We'll try this with a code change.
+
+First, create a feature branch and add the following method to the JodaToJava8Converter class.
+
+```java
+	public static java.time.LocalDate convertLocalDate(LocalDate jodaLocalDate) {
+
+		return java.time.LocalDate.of(
+				jodaLocalDate.getYear(),
+				jodaLocalDate.getMonthOfYear(),
+				jodaLocalDate.getDayOfMonth());
+	}
+```
+
+Then push the new branch with this change to GitHub. On GitHub, create a pull request to merge the new branch into the master branch, and open the pull request. You will see some checks inside the pull request page, consisting of travis builds. As soon as travis has finished, Codecov checks are added to the pull request. In our case, the travis checks will suceed, because our project still builds. But the Codecov checks will fail, because the new code we comitted is not covered by tests, and will decrease our code coverage substantially:
+
+![Checks on the pull request page](/images/pr_checks.png)
+
+The Codecov bot should add a non-flattering, very visual comment as well:
+
+![Codecov bot has no chill](/images/codecov_bot.png)
 
 ## <a name="license"></a>License badge
 
