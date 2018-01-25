@@ -315,3 +315,7 @@ Click on "Look up" to make Jitpack grab a list of all released versions and offe
 ![Your library's Jitpack maven coordinates](/images/jitpack_coordinates.png)
 
 Note that instead of referencing your library with the maven coordinates you chose, the group id is changed to contain your git repository name to make it unique.
+
+Right underneath that, there is a badge. Click on it to access the markdown you need to display the badge in your README.MD. Add the markdown behind your other badges, resulting in:
+
+![Jitpack badge](/images/jitpack_badge.png)
