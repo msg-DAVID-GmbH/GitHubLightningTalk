@@ -146,6 +146,7 @@ public class JodaToJava8ConverterTest {
 ## <a name="travis"></a>Travis CI
 From Travis CI's homepage: 
 > Test and Deploy with Confidence
+
 > Easily sync your GitHub projects with Travis CI and you’ll be testing your code in minutes!
 
 In the settings, add the Travis CI service to your repository:
