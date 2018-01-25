@@ -306,7 +306,7 @@ Go to https://jitpack.io/ and enter the repository's URL (the same you'd use to 
 
 ![Jitpack homepage](/images/jitpack_home.png)
 
-Click on "Look it up" to make Jitpack grab a list of all released versions and offer to build it. Click on "Get it". Jitpack should build, add a log button...
+Click on "Look up" to make Jitpack grab a list of all released versions and offer to build it. Click on "Get it". Jitpack should build, add a log button...
 
 ![Build artifact with Jitpack](/images/jitpack_get_it.png)
 
