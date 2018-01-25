@@ -179,7 +179,24 @@ Visit https://github.com/marketplace/codecov and set up a free trial for "Open S
 
 Login and authorize Codecov. Add the new repository.
 
-Now edit the .travis.yml (Codecov easily integrates with Travis CI) to look like this:
+Edit your pom.xml to add the cobertura plugin into the build/plugins block:
+
+```
+<plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>cobertura-maven-plugin</artifactId>
+    <version>2.7</version>
+    <configuration>
+        <formats>
+            <format>html</format>
+            <format>xml</format>
+        </formats>
+        <check />
+    </configuration>
+</plugin>
+```
+
+Edit the .travis.yml (Codecov easily integrates with Travis CI) to look like this:
 
 ```yaml
 language: java
@@ -192,3 +209,5 @@ script: "mvn cobertura:cobertura"
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 ```
+
+Your next travis build should start automatically after pushing your changes, and should send coverage information to Codecov.
