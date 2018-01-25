@@ -298,6 +298,7 @@ This automatically counts as a release, but you can add proper release notes on 
 From the Jitpack homepage:
 
 > Easy to use package repository for Git
+
 > Publish your JVM and Android libraries
 
 Go to https://jitpack.io/ and enter the repository's URL (the same you'd use to clone it) into the textbox like this:
