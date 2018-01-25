@@ -6,34 +6,35 @@ This repository demonstrates working with GitHub and the services in the marketp
 * [Creating an account](#creating_account)
 * [Creating a repository](#create_repo)
 * [Creating a .gitignore](#gitignore)
-* [Cloning a repository](#clone_repo)
+* [Cloning the repository](#clone_repo)
 * [Adding the pom.xml](#pom.xml)
 * [First code](#first_code)
-* [Add a test](#add_test)
+* [Adding a test](#add_test)
+* [Travis CI](#travis)
 
 ## <a name="creating_account"></a>Creating an account
 Go to https://github.com/ and sign up. Pick the free plan and verify your email address.
 
 ![Sign up](/images/creating_an_account.png)
 
-## <a name="create_repo"></a>Create a new repository
+## <a name="create_repo"></a>Creating a repository
 Enter a repository name and initialize the repository with a README and the Apache License 2.0.
 
 ![New Repository](/images/create_repo.png)
 
-## <a name="gitignore"></a>Create a .gitignore
+## <a name="gitignore"></a>Creating a .gitignore
 Create new file, name it ".gitignore", pick the Java template, and add your IDE's files to the file.
 
 ![.gitignore](/images/gitignore.png)
 
-## <a name="clone_repo"></a>Cloning a repository
+## <a name="clone_repo"></a>Cloning the repository
 Copy the repository URL into your clipboard and clone the repository in your IDE.
 
 ![Copy the repository URL](/images/clone_copy_url.png)
 
 ![Clone the repository in your IDE](/images/clone_ide.png)
 
-## <a name="pom.xml"></a>## Adding the pom.xml
+## <a name="pom.xml"></a>Adding the pom.xml
 Create a pom.xml in the root directory, and add JodaToJava8Converter.java in a package, and create a test in the test tree.
 ```xml
 <?xml version="1.0"?>
@@ -106,7 +107,7 @@ public class JodaToJava8Converter {
 }
 ```
 
-## <a name="add_test"></a>Add a test
+## <a name="add_test"></a>Adding a test
 
 ```java
 ## <a name="first_code"></a>First code
@@ -135,3 +136,6 @@ public class JodaToJava8ConverterTest {
 	}
 }
 ```
+
+## <a name="travis"></a>Travis CI
+
