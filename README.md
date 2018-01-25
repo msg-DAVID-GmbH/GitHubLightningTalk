@@ -7,4 +7,5 @@ This repository demonstrates working with GitHub and the services in the marketp
 
 ## <a name="creating_account"></a>Creating an account
 Go to https://github.com/ and sign up.
-![Sign up](/images/creating_an_account.jpg)
+
+![Sign up](/images/creating_an_account.png)
