@@ -154,5 +154,5 @@ jdk:
 
 Go to https://travis-ci.org/auth?redirectUri=https%3A%2F%2Ftravis-ci.org%2Fprofile and sign in with GitHub, then authorize travis-ci.
 
-Switch the new repository to "on" on the page you're being redirected to. Click on the 
+Switch the new repository to "on" on the page you're being redirected to. Click on "More Options" -> "Trigger Build" to trigger a build automatically, or push a change to GitHub to trigger an automatic build.
 
