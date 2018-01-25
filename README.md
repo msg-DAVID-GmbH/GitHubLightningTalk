@@ -12,6 +12,7 @@ This repository demonstrates working with GitHub and the services in the marketp
 * [Adding a test](#add_test)
 * [Travis CI](#travis)
 * [Codecov](#codecov)
+* [License badge](#license)
 
 ## <a name="creating_account"></a>Creating an account
 Go to https://github.com/ and sign up. Pick the free plan and verify your email address.
@@ -217,3 +218,7 @@ Your next travis build should start automatically after pushing your changes, an
 Now you can go to https://codecov.io/, log in if necessary, go to Settings -> Badge -> Markdown, copy the markdown and add it to your README.MD. Now you should see a coverage percentage in GitHub like so:
 
 ![Codecov badge embedded in README.MD](/images/codecov_badge.png)
+
+## <a name="license"></a>License badge
+
+Go to https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba and copy the markdown for your license, in this case Apache 2.0. Add it to your README.MD as you did with the other badge markdowns.
