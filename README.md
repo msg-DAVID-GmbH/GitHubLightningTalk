@@ -236,13 +236,34 @@ First, create a feature branch and add the following method to the JodaToJava8Co
 	}
 ```
 
-Then push the new branch with this change to GitHub. On GitHub, create a pull request to merge the new branch into the master branch, and open the pull request. You will see some checks inside the pull request page, consisting of travis builds. As soon as travis has finished, Codecov checks are added to the pull request. In our case, the travis checks will suceed, because our project still builds. But the Codecov checks will fail, because the new code we comitted is not covered by tests, and will decrease our code coverage substantially:
+Then push the new branch with this change to GitHub. On GitHub, create a pull request to merge the new branch into the master branch, and open the pull request. You will see some checks inside the pull request page, consisting of travis builds. As soon as travis has finished, Codecov checks are added to the pull request. In our case, the travis checks will suceed, because our project still builds. But the Codecov checks will fail, because the new code we committed is not covered by tests, and will decrease our code coverage substantially:
 
 ![Checks on the pull request page](/images/pr_checks.png)
 
-The Codecov bot should add a non-flattering, very visual comment as well:
+The Codecov bot should add an unflattering, very visual comment as well:
 
 ![Codecov bot has no chill](/images/codecov_bot.png)
+
+We can and should fix the problem by adding a test such as this to JodaToJava8ConverterTest.java:
+
+```java
+
+	@Test
+	public void testConvertLocalDate() {
+
+		LocalDate jodaLocalDate = LocalDate.parse("2010-06-30");
+		java.time.LocalDate localDate = JodaToJava8Converter.convertLocalDate(jodaLocalDate);
+		assertEquals("2010-06-30", localDate.toString());
+	}
+```
+
+Push the change to the feature branch. Travis will run again, and this time all checks should succeed:
+
+![Checks succeeding](/images/pr_checks_all_good.png)
+
+The Codecov bot has no choice but to change his mind and edit his original comment to display a friendlier color. After the fix, our pull request even improves the overall code coverage:
+
+![Codecov bot has no choiec but to back down](/images/codecov_green.png)
 
 ## <a name="license"></a>License badge
 
