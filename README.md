@@ -5,6 +5,7 @@ This repository demonstrates working with GitHub and the services in the marketp
 # Table of Content
 * [Creating an account](#creating_account)
 * [Creating a repository](#create_repo)
+* [License badge](#license)
 * [Creating a .gitignore](#gitignore)
 * [Cloning the repository](#clone_repo)
 * [Adding the pom.xml](#pom.xml)
@@ -13,7 +14,8 @@ This repository demonstrates working with GitHub and the services in the marketp
 * [Travis CI](#travis)
 * [Codecov](#codecov)
 * [Codecov on pull requests](#codecov_pr)
-* [License badge](#license)
+* [Creating a release](#release)
+* [Jitpack](#jitpack)
 
 ## <a name="creating_account"></a>Creating an account
 Go to https://github.com/ and sign up. Pick the free plan and verify your email address.
@@ -24,6 +26,10 @@ Go to https://github.com/ and sign up. Pick the free plan and verify your email 
 Enter a repository name and initialize the repository with a README and the Apache License 2.0.
 
 ![New Repository](/images/create_repo.png)
+
+## <a name="license"></a>License badge
+
+Go to https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba and copy the markdown for your license, in this case Apache 2.0. Add it to your README.MD as you did with the other badge markdowns.
 
 ## <a name="gitignore"></a>Creating a .gitignore
 Create new file, name it ".gitignore", pick the Java template, and add your IDE's files to the file.
@@ -263,8 +269,47 @@ Push the change to the feature branch. Travis will run again, and this time all 
 
 The Codecov bot has no choice but to change his mind and edit his original comment to display a friendlier color. After the fix, our pull request even improves the overall code coverage:
 
-![Codecov bot has no choiec but to back down](/images/codecov_green.png)
+![Codecov bot has no choice but to back down](/images/codecov_green.png)
 
-## <a name="license"></a>License badge
+We can now confidently merge the pull request.
 
-Go to https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba and copy the markdown for your license, in this case Apache 2.0. Add it to your README.MD as you did with the other badge markdowns.
+## <a name="release"></a>Creating a release
+
+Now that our code is of high quality, we can release a version of our project. That requires that we set our maven artifact id in the pom.xml to a fixed value (no SNAPSHOT) like this:
+
+```
+    <groupId>mafoe</groupId>
+    <artifactId>working-with-github</artifactId>
+    <version>1.0</version>
+    <modelVersion>4.0.0</modelVersion>
+```
+
+Then we push that change to the master branch and create a git tag. It makes sense to name it "1.0". The required git commands would be
+
+```
+git tag 1.0
+git push origin 1.0
+```
+
+This automatically counts as a release, but you can add proper release notes on GitHub to convey more information.
+
+## <a name="jitpack"></a>Jitpack
+
+From the Jitpack homepage:
+
+> Easy to use package repository for Git
+> Publish your JVM and Android libraries
+
+Go to https://jitpack.io/ and enter the repository's URL (the same you'd use to clone it) into the textbox like this:
+
+![Jitpack homepage](/images/jitpack_home.png)
+
+Click on "Look it up" to make Jitpack grab a list of all released versions and offer to build it. Click on "Get it". Jitpack should build, add a log button...
+
+![Build artifact with Jitpack](/images/jitpack_get_it.png)
+
+...and scroll down to a view of how you need to reference your library with the build tool of your choice:
+
+![Your library's Jitpack maven coordinates](/images/jitpack_coordinates.png)
+
+Note that instead of referencing your library with the maven coordinates you chose, the group id is changed to contain your git repository name to make it unique.
