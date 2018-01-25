@@ -17,6 +17,7 @@ This repository demonstrates working with GitHub and the services in its marketp
 * [Creating a release](#release)
 * [Jitpack](#jitpack)
 * [VersionEye](#versioneye)
+* [Final repository example](#final)
 
 ## <a name="creating_account"></a>Creating an account
 Go to https://github.com/ and sign up. Pick the free plan and verify your email address.
@@ -336,3 +337,7 @@ In the above image is also a badge you can click to access the markdown. Add it 
 ![Versioneye badge](/images/versioneye_badge.png)
 
 As it turns out, the junit version we used is outdated: 2.7 versus 2.9.9 at the time of writing this. If we updated junit to that version, VersionEye should give us a green badge to show we're up to date. But that's your homework.
+
+## <a name="final"></a>Final repository example
+
+This is an example of how the final repository looks like:  https://github.com/working-with-github/working-with-github
