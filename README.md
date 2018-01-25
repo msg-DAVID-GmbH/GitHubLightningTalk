@@ -110,9 +110,6 @@ public class JodaToJava8Converter {
 ## <a name="add_test"></a>Adding a test
 
 ```java
-## <a name="first_code"></a>First code
-
-```java
 package mafoe;
 
 import org.joda.time.DateTime;
