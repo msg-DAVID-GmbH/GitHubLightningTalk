@@ -323,6 +323,10 @@ Right underneath that, there is a badge. Click on it to access the markdown you 
 
 ## <a name="versioneye"></a>VersionEye
 
+From the VersionEye homepage: 
+
+>  notifies you about security vulnerabilities, license violations and out-dated dependencies in your Git repositories
+
 Go to https://www.versioneye.com/ and sign up with your GitHub account. Pick the public variant. Authorize versioneye. On the next page, click on your repository. Enable integration for the master branch pom.xml. Navigate to your project, you should see a page like this:
 
 ![Versioneye summary](/images/versioneye_summary.png)
