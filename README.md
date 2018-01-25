@@ -156,3 +156,10 @@ Go to https://travis-ci.org/auth?redirectUri=https%3A%2F%2Ftravis-ci.org%2Fprofi
 
 Switch the new repository to "on" on the page you're being redirected to. Click on "More Options" -> "Trigger Build" to trigger a build automatically, or push a change to GitHub to trigger an automatic build.
 
+At the top of the travis build page, there is a badge. Click it and select "Markdown" code. Copy the markdown to clipboard...
+
+![Copy Travis badge markdown](/images/travis_badge.png)
+
+... and add it to the README.MD:
+
+![Add Travis badge to README.MD](/images/add_travis_badge_to_readme.png)
