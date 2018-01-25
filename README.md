@@ -204,19 +204,16 @@ language: java
 jdk:
   - oraclejdk8
 
-script:
- - mvn clean
- - mvn cobertura:cobertura
- - mvn verify
+script: "mvn cobertura:cobertura" 
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 ```
 
-Note that we tell travis to call the cobertura plugin and to send the coverage report to Codecov.
+Note that we tell travis to call the cobertura plugin and the curl to send the coverage report to Codecov.
 
 Your next travis build should start automatically after pushing your changes, and should send coverage information to Codecov.
 
-Now you can go to https://codecov.io/, login if necessary, go to Settings -> Badge -> Markdown, copy the markdown and add it to your README.MD. Now you should see a coverage percentage in GitHub like so:
+Now you can go to https://codecov.io/, log in if necessary, go to Settings -> Badge -> Markdown, copy the markdown and add it to your README.MD. Now you should see a coverage percentage in GitHub like so:
 
 ![Codecov badge embedded in README.MD](/images/codecov_badge.png)
