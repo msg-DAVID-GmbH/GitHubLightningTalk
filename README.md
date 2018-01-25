@@ -204,10 +204,15 @@ language: java
 jdk:
   - oraclejdk8
 
-script: "mvn cobertura:cobertura"
+script:
+ - mvn clean
+ - mvn cobertura:cobertura
+ - mvn verify
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 ```
+
+Note that we tell travis to call the cobertura plugin and to send the coverage report to Codecov.
 
 Your next travis build should start automatically after pushing your changes, and should send coverage information to Codecov.
