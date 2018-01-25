@@ -163,3 +163,7 @@ At the top of the travis build page, there is a badge. Click it and select "Mark
 ... and add it to the README.MD:
 
 ![Add Travis badge to README.MD](/images/add_travis_badge_to_readme.png)
+
+The result should look like this:
+
+![Badge embedded in README.MD](/images/travis_badge_final.png)
