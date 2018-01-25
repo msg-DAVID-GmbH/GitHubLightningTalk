@@ -141,7 +141,7 @@ From Travis CI's homepage:
 
 In the settings, add the Travis CI service to your repository:
 
-![Add Travis CI service](/images/travis.png)
+![Add Travis CI service](/images/add_travis.png)
 
 Add a file named ".travis.yml" into the root directory:
 
@@ -151,4 +151,3 @@ language: java
 jdk:
 - oraclejdk8
 ```
-
