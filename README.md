@@ -216,3 +216,7 @@ after_success:
 Note that we tell travis to call the cobertura plugin and to send the coverage report to Codecov.
 
 Your next travis build should start automatically after pushing your changes, and should send coverage information to Codecov.
+
+Now you can go to https://codecov.io/, login if necessary, go to Settings -> Badge -> Markdown, copy the markdown and add it to your README.MD. Now you should see a coverage percentage in GitHub like so:
+
+![Codecov badge embedded in README.MD](/images/codecov_badge.png)
