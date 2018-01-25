@@ -7,6 +7,9 @@ This repository demonstrates working with GitHub and the services in the marketp
 * [Creating a repository](#create_repo)
 * [Creating a .gitignore](#gitignore)
 * [Cloning a repository](#clone_repo)
+* [Adding the pom.xml](#pom.xml)
+* [First code](#first_code)
+* [Add a test](#add_test)
 
 ## <a name="creating_account"></a>Creating an account
 Go to https://github.com/ and sign up. Pick the free plan and verify your email address.
@@ -30,7 +33,7 @@ Copy the repository URL into your clipboard and clone the repository in your IDE
 
 ![Clone the repository in your IDE](/images/clone_ide.png)
 
-## pom.xml and first code
+## <a name="pom.xml"></a>## Adding the pom.xml
 Create a pom.xml in the root directory, and add JodaToJava8Converter.java in a package, and create a test in the test tree.
 ```xml
 <?xml version="1.0"?>
@@ -57,7 +60,6 @@ Create a pom.xml in the root directory, and add JodaToJava8Converter.java in a p
     </build>
 
     <dependencies>
-
         <dependency>
             <groupId>joda-time</groupId>
             <artifactId>joda-time</artifactId>
@@ -70,4 +72,66 @@ Create a pom.xml in the root directory, and add JodaToJava8Converter.java in a p
         </dependency>
     </dependencies>
 </project>
+```
+
+## <a name="first_code"></a>First code
+
+```java
+package mafoe;
+
+import org.joda.time.DateTime;
+
+import java.time.ZoneId;
+
+/**
+ * Converts Joda time objects to javax.time objects.
+ *
+ * @author EMAFOER
+ */
+public class JodaToJava8Converter {
+
+	public static java.time.ZonedDateTime convertTimestamp(DateTime jodaDateTime) {
+
+		String zoneId = jodaDateTime.getZone().getID();
+		return java.time.ZonedDateTime.of(
+				jodaDateTime.getYear(),
+				jodaDateTime.getMonthOfYear(),
+				jodaDateTime.getDayOfMonth(),
+				jodaDateTime.getHourOfDay(),
+				jodaDateTime.getMinuteOfHour(),
+				jodaDateTime.getSecondOfMinute(),
+				jodaDateTime.getMillisOfSecond() * 1000 * 1000,
+				ZoneId.of(zoneId));
+	}
+}
+```
+
+## <a name="add_test"></a>Add a test
+
+```java
+## <a name="first_code"></a>First code
+
+```java
+package mafoe;
+
+import org.joda.time.DateTime;
+import org.junit.Test;
+
+import java.time.ZonedDateTime;
+
+import static org.junit.Assert.*;
+
+/**
+ * @author EMAFOER
+ */
+public class JodaToJava8ConverterTest {
+
+	@Test
+	public void testConvertTimestamp() {
+
+		DateTime jodaTime = DateTime.parse("2010-06-30T01:20+02:00");
+		ZonedDateTime zonedDateTime = JodaToJava8Converter.convertTimestamp(jodaTime);
+		assertEquals("2010-06-30T01:20+02:00", zonedDateTime.toString());
+	}
+}
 ```
