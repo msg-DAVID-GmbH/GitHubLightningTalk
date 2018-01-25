@@ -11,6 +11,7 @@ This repository demonstrates working with GitHub and the services in the marketp
 * [First code](#first_code)
 * [Adding a test](#add_test)
 * [Travis CI](#travis)
+* [Codecov](#codecov)
 
 ## <a name="creating_account"></a>Creating an account
 Go to https://github.com/ and sign up. Pick the free plan and verify your email address.
@@ -167,3 +168,27 @@ At the top of the travis build page, there is a badge. Click it and select "Mark
 The result should look like this:
 
 ![Badge embedded in README.MD](/images/travis_badge_final.png)
+
+## <a name="codecov"></a>Codecov
+
+From Codecov's GitHub marketplace page:
+
+> Codecov provides highly integrated tools to group, merge, archive and compare coverage reports. 
+
+Visit https://github.com/marketplace/codecov and set up a free trial for "Open Source". "Install for free".
+
+Login and authorize Codecov. Add the new repository.
+
+Now edit the .travis.yml (Codecov easily integrates with Travis CI) to look like this:
+
+```yaml
+language: java
+
+jdk:
+  - oraclejdk8
+
+script: "mvn cobertura:cobertura"
+
+after_success:
+- bash <(curl -s https://codecov.io/bash)
+```
