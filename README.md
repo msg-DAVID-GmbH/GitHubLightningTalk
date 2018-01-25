@@ -1,6 +1,6 @@
-# SpringCloudLightningTalk
+
 # Working with Github
-This repository demonstrates working with GitHub and the services in the marketplace, such as Travis, CodeCoverage, VersionEye, and JitPack.
+This repository demonstrates working with GitHub and the services in its marketplace & ecosystem, such as Travis, CodeCoverage, VersionEye, and JitPack.
 
 # Table of Content
 * [Creating an account](#creating_account)
@@ -16,6 +16,7 @@ This repository demonstrates working with GitHub and the services in the marketp
 * [Codecov on pull requests](#codecov_pr)
 * [Creating a release](#release)
 * [Jitpack](#jitpack)
+* [VersionEye](#versioneye)
 
 ## <a name="creating_account"></a>Creating an account
 Go to https://github.com/ and sign up. Pick the free plan and verify your email address.
@@ -319,3 +320,15 @@ Note that instead of referencing your library with the maven coordinates you cho
 Right underneath that, there is a badge. Click on it to access the markdown you need to display the badge in your README.MD. Add the markdown behind your other badges, resulting in:
 
 ![Jitpack badge](/images/jitpack_badge.png)
+
+## <a name="versioneye"></a>VersionEye
+
+Go to https://www.versioneye.com/ and sign up with your GitHub account. Pick the public variant. Authorize versioneye. On the next page, click on your repository. Enable integration for the master branch pom.xml. Navigate to your project, you should see a page like this:
+
+![Versioneye summary](/images/versioneye_summary.png)
+
+In the above image is also a badge you can click to access the markdown. Add it to your README.MD to make it look like this:
+
+![Versioneye badge](/images/versioneye_badge.png)
+
+As it turns out, the junit version we used is outdated: 2.7 versus 2.9.9 at the time of writing this. If we updated junit to that version, VersionEye should give us a green badge to show we're up to date. But that's your homework.
