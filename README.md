@@ -2,7 +2,7 @@
 # Working with Github
 This repository demonstrates working with GitHub and the services in its marketplace & ecosystem, such as Travis, CodeCoverage, VersionEye, and JitPack.
 
-# Table of Content
+# Table of Contents
 * [Creating an account](#creating_account)
 * [Creating a repository](#create_repo)
 * [License badge](#license)
