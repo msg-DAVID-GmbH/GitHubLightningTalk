@@ -18,6 +18,7 @@ This repository demonstrates working with GitHub and the services in its marketp
 * [Jitpack](#jitpack)
 * [VersionEye](#versioneye)
 * [Final repository example](#final)
+* [Materials](#materials)
 
 ## <a name="creating_account"></a>Creating an account
 Go to https://github.com/ and sign up. Pick the free plan and verify your email address.
@@ -341,3 +342,9 @@ As it turns out, the junit version we used is outdated: 2.7 versus 2.9.9 at the 
 ## <a name="final"></a>Final repository example
 
 This is an example of how the final repository looks like:  https://github.com/working-with-github/working-with-github
+
+## <a name="materials"></a>More materials
+
+There are many guides for github online. Here are some:
+
+https://guides.github.com/activities/hello-world/
